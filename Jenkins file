@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                echo 'Cloning from GitHub...'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                bat 'dir'
+            }
+        }
+
+        stage('Read File') {
+            steps {
+                bat 'type index.html'
+            }
+        }
+    }
+}
